@@ -1,0 +1,45 @@
+%META:TOPICPARENT{name="Plugins"}%
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = Tag topics
+-->
+---+!! Empty Plugin
+
+%SHORTDESCRIPTION%
+
+%TOC%
+
+---++ Skin
+
+Add this to TopicMenu:
+<verbatim>
+<!-- TAGGING %JQREQUIRE{"textboxlist"}%-->%IF{"$TOPIC allows 'CHANGE' and $'WORKFLOWALLOWS{allowtagging}'" then="<li><span class='moremenue-tag'><a href='%SCRIPTURL{"view"}%/%SYSTEMWEB%/TagKVPPluginDialog?skin=text&section=dialog&tagwebtopic=%ENCODE{"%INCLUDINGWEB%.%INCLUDINGTOPIC%" type="url"}%' class='jqUIDialogLink {cache:false}'>%MAKETEXT{"Tag this page"}%</a></span></li>"}%
+</verbatim>
+
+---++ Configure
+
+Set ={Plugins}{TagKVPPlugin}{condition}= to a condition, when tagging is allowed, eg.
+<verbatim>
+{Plugins}{TagKVPPlugin}{condition} = '%WORKFLOWALLOWS{"allowtagging"}%'
+</verbatim>
+
+---++ Installation
+You do not need to install anything in the browser to use this extension. The following instructions are for the administrator who installs the extension on the server.
+
+Open configure, and open the "Extensions" section. Use "Find More Extensions" to get a list of available extensions. Select "Install".
+
+If you have any problems, or if the extension isn't available in =configure=, then you can still install manually from the command-line. See http://foswiki.org/Support/ManuallyInstallingExtensions for more help.
+
+
+---++ Info
+
+|  Author: | %$CREATED_AUTHOR% |
+|  Copyright: | %$CREATEDYEAR%, %$CREATED_AUTHOR%, All Rights Reserved |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Dependencies: | None |
+|  Version: | 1.0 |
+|  Release: | 1.0 |
+|  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  1.0.0 (%$CREATEDATE%): | Initial version |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
