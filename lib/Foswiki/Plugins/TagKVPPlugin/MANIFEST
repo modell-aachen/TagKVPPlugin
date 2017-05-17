@@ -1,0 +1,6 @@
+!noci
+data/System/TagKVPPlugin.txt 0644 Documentation page
+data/System/TagKVPPluginDialog.txt 0644
+lib/Foswiki/Plugins/TagKVPPlugin.pm 0444 Perl module
+lib/Foswiki/Plugins/TagKVPPlugin/Config.spec 0444 Configuration
+locale/TagKVPPlugin/de.po 0644
