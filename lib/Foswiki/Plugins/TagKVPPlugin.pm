@@ -7,6 +7,7 @@ use warnings;
 
 use Foswiki::Func    ();    # The plugins API
 use Foswiki::Plugins ();    # For the API version
+use Foswiki::Plugins::JQueryPlugin;
 
 our $VERSION = '1.0';
 our $RELEASE = '1.0';
@@ -25,7 +26,10 @@ sub initPlugin {
         return 0;
     }
 
-    Foswiki::Func::registerRESTHandler( 'tag', \&restTag );
+    my %restopts = (authenticate => 1, validate => 0, http_allow => 'GET');
+    Foswiki::Func::registerRESTHandler( 'tag', \&restTag, %restopts );
+
+    Foswiki::Plugins::JQueryPlugin::registerPlugin('textboxlist');
 
     # Plugin correctly initialized
     return 1;
