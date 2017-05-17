@@ -1,0 +1,18 @@
+%STARTSECTION{"dialog"}%
+<div title="%MAKETEXT{"Tag this page"}%" class="jqUIDialog { modal:true, resizable:true, draggable:true, height:240, width:300 }">
+<div>
+---++ %MAKETEXT{"Please choose appropriate tags:"}%
+<form class="tagDialogForm" action="%SCRIPTURLPATH{"rest"}%/TagKVPPlugin/tag">
+<p>
+    <span class="foswikiHidden modacSubmitMessage">&lt;h2&gt;%MAKETEXT{"Updating tags..."}%&lt;h2&gt;</span>
+    <input type="hidden" name="webtopic" value="%URLPARAM{"tagwebtopic"}%" />
+    <input type="text" class="jqTextboxList" name="tags" value="%QUERY{"'%URLPARAM{"tagwebtopic"}%'/Tags"}%" />
+</p><p>
+    <a class="jqUIDialogButton jqUIDialogSubmit {icon: 'ui-icon-circle-check'}">%MAKETEXT{"Submit tags"}%</a>
+    <a class="jqUIDialogButton jqUIDialogClose {icon: 'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
+</p>
+</form>
+</div>
+</div>
+%ENDSECTION{"dialog"}%
+
